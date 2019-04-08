@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ngdsx.partybuilding.dao.SysArticlesMapper" >
+  <resultMap id="BaseResultMap" type="org.ngdsx.partybuilding.entity.SysArticles" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="sort_rank" property="sortRank" jdbcType="INTEGER" />
+    <result column="is_commend" property="isCommend" jdbcType="INTEGER" />
+    <result column="is_make" property="isMake" jdbcType="INTEGER" />
+    <result column="channel" property="channel" jdbcType="INTEGER" />
+    <result column="arc_rank" property="arcRank" jdbcType="INTEGER" />
+    <result column="click" property="click" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="short_title" property="shortTitle" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="VARCHAR" />
+    <result column="lit_pic" property="litPic" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="keywords" property="keywords" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, type_id, sort_rank, is_commend, is_make, channel, arc_rank, click, title, short_title, 
+    color, author, source, lit_pic, create_time, send_time, operator, description, keywords
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_articles
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_articles
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.ngdsx.partybuilding.entity.SysArticles" >
+    insert into sys_articles (id, type_id, sort_rank, 
+      is_commend, is_make, channel, 
+      arc_rank, click, title, 
+      short_title, color, author, 
+      source, lit_pic, create_time, 
+      send_time, operator, description, 
+      keywords)
+    values (#{id,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, #{sortRank,jdbcType=INTEGER}, 
+      #{isCommend,jdbcType=INTEGER}, #{isMake,jdbcType=INTEGER}, #{channel,jdbcType=INTEGER}, 
+      #{arcRank,jdbcType=INTEGER}, #{click,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{shortTitle,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{source,jdbcType=VARCHAR}, #{litPic,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{sendTime,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{keywords,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.ngdsx.partybuilding.entity.SysArticles" >
+    insert into sys_articles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="sortRank != null" >
+        sort_rank,
+      </if>
+      <if test="isCommend != null" >
+        is_commend,
+      </if>
+      <if test="isMake != null" >
+        is_make,
+      </if>
+      <if test="channel != null" >
+        channel,
+      </if>
+      <if test="arcRank != null" >
+        arc_rank,
+      </if>
+      <if test="click != null" >
+        click,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="shortTitle != null" >
+        short_title,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="source != null" >
+        source,
+      </if>
+      <if test="litPic != null" >
+        lit_pic,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="keywords != null" >
+        keywords,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="sortRank != null" >
+        #{sortRank,jdbcType=INTEGER},
+      </if>
+      <if test="isCommend != null" >
+        #{isCommend,jdbcType=INTEGER},
+      </if>
+      <if test="isMake != null" >
+        #{isMake,jdbcType=INTEGER},
+      </if>
+      <if test="channel != null" >
+        #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="arcRank != null" >
+        #{arcRank,jdbcType=INTEGER},
+      </if>
+      <if test="click != null" >
+        #{click,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null" >
+        #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="litPic != null" >
+        #{litPic,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.ngdsx.partybuilding.entity.SysArticles" >
+    update sys_articles
+    <set >
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="sortRank != null" >
+        sort_rank = #{sortRank,jdbcType=INTEGER},
+      </if>
+      <if test="isCommend != null" >
+        is_commend = #{isCommend,jdbcType=INTEGER},
+      </if>
+      <if test="isMake != null" >
+        is_make = #{isMake,jdbcType=INTEGER},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="arcRank != null" >
+        arc_rank = #{arcRank,jdbcType=INTEGER},
+      </if>
+      <if test="click != null" >
+        click = #{click,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null" >
+        short_title = #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="litPic != null" >
+        lit_pic = #{litPic,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null" >
+        keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.ngdsx.partybuilding.entity.SysArticles" >
+    update sys_articles
+    set type_id = #{typeId,jdbcType=INTEGER},
+      sort_rank = #{sortRank,jdbcType=INTEGER},
+      is_commend = #{isCommend,jdbcType=INTEGER},
+      is_make = #{isMake,jdbcType=INTEGER},
+      channel = #{channel,jdbcType=INTEGER},
+      arc_rank = #{arcRank,jdbcType=INTEGER},
+      click = #{click,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      short_title = #{shortTitle,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      lit_pic = #{litPic,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      operator = #{operator,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
