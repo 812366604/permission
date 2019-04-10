@@ -16,7 +16,7 @@
              <property name="forceBigDecimals" value="false"/>
          </javaTypeResolver>
          <!--生成Model类存放位置-->
-         <javaModelGenerator targetPackage="org.ngdsx.partybuilding.entity" targetProject="D:\eclipse-workspace\permission\generator">
+         <javaModelGenerator targetPackage="com.mmall.model" targetProject="D:\eclipse-workspace\permission\generator">
              <property name="enableSubPackages" value="true"/>
              <property name="trimStrings" value="true"/>
          </javaModelGenerator>
@@ -25,10 +25,11 @@
              <property name="enableSubPackages" value="true"/>
          </sqlMapGenerator>
          <!--生成Dao类存放位置-->
-         <javaClientGenerator type="XMLMAPPER" targetPackage="org.ngdsx.partybuilding.dao" targetProject="D:\eclipse-workspace\permission\generator">
+         <javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject="D:\eclipse-workspace\permission\generator">
              <property name="enableSubPackages" value="true"/>
          </javaClientGenerator>
-         <!--生成对应表及类名-->         
+         <!--生成对应表及类名--> 
+         <!--         
          <table tableName="sys_acl" domainObjectName="Acl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
          <table tableName="sys_acl_module" domainObjectName="AclModule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
          <table tableName="sys_dept" domainObjectName="Dept" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
@@ -38,6 +39,7 @@
          <table tableName="sys_role_user" domainObjectName="RoleUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
          <table tableName="sys_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
          <table tableName="sys_suggest" domainObjectName="SysSuggest" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
+          -->
          <table tableName="sys_notices" domainObjectName="SysNotices" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>         
          <table tableName="sys_articles" domainObjectName="SysArticles" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
      </context>
